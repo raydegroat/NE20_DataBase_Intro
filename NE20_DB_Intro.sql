@@ -145,7 +145,7 @@ p_Deposit 4, 180
 GO
 */
 
-*/ Check the Accounts to see the balance reflected */
+/* Check the Accounts to see the balance reflected */
 
 /*
 SELECT * FROM Accounts
