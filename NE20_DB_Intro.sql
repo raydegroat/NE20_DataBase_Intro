@@ -29,6 +29,7 @@ CREATE TABLE Accounts (
 	AccountTypeId INT FOREIGN KEY REFERENCES AccountTypes(Id),
 	Balance Decimal(15, 2) NOT NULL DEFAULT(0),
 	ClientId INT FOREIGN KEY REFERENCES Clients(Id)
+)
 
 /* Step 3. Populate the database with test data. Populate the cliets table with some initial data for testing */
 
