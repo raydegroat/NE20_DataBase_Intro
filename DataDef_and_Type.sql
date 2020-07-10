@@ -28,7 +28,7 @@ INSERT INTO Minions (Name, TownId)
 
 DELETE FROM Minions;
 
-DELETE Minions, Towns WHERE Id = 4;
+DELETE Minions;
 
 CREATE TABLE People (
     Id INTEGER IDENTITY(1,1) PRIMARY KEY,
@@ -38,7 +38,7 @@ CREATE TABLE People (
     Gender CHAR(1) CHECK(Gender = 'M' OR Gender = 'F') NOT NULL,
     Birthdate DATE NOT NULL,
     Biography TEXT
-)
+);
 
 INSERT INTO People (Name, Height, Gender, Birthdate, Biography)
     VALUES ('Greta Tintin Eleonora Ernman Thunberg', 148.6, 'F', '2003-01-03', 'Greta Tintin Eleonora Ernman Thunberg (Swedish: [ˈɡrêːta ˈtʉ̂ːnbærj] (About this soundlisten); born 3 January 2003) is a Swedish environmental activist who has gained international recognition for promoting the view that humanity is facing an existential crisis arising from climate change.[3] Thunberg is known for her youth and her straightforward speaking manner,[4] both in public and to political leaders and assemblies, in which she criticises world leaders for their failure to take sufficient action to address the climate crisis.')
@@ -65,4 +65,7 @@ CREATE TABLE Users (
     Username VARCHAR(30) NOT NULL,
     --PASSWORD 
 
-)
+);
+                                                                        
+SELECT * FROM People;
+                                                                        
