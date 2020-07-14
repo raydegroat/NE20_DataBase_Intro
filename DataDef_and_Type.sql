@@ -68,13 +68,24 @@ CREATE TABLE Users (
     IsDeleted BIT
     CONSTRAINT pk_Users PRIMARY KEY (Id)
 );
-                                                                        
+
+INSERT INTO Users (Username, [Password], LastLoginTime, IsDeleted)
+    VALUES ('Greta', 'ABCDEFG', NULL, 0);
+INSERT INTO Users (Username, [Password], LastLoginTime, IsDeleted)
+    VALUES ('Ray', 'Password', NULL, 0);
+INSERT INTO Users (Username, [Password], LastLoginTime, IsDeleted)
+    VALUES ('Lynda', '12345', NULL, 0);
+INSERT INTO Users (Username, [Password], LastLoginTime, IsDeleted)
+    VALUES ('Todd', '12312345', NULL, 0);
+INSERT INTO Users (Username, [Password], LastLoginTime, IsDeleted)
+    VALUES ('Ted', 'Xanadu', NULL, 0);
+
 ALTER TABLE Users
 DROP CONSTRAINT pk_Users;
 
 ALTER TABLE Users
-ADD CONSTRAINT PK_Users PRIMARY KEY (Id,Username)
-                                                                                   
-                                                                        
-SELECT * FROM People;
+ADD CONSTRAINT PK_Users PRIMARY KEY (Id,Username);
+
+ALTER TABLE Users
+ADD CONSTRAINT chk_Password CHECK (LEN(Password) >= 5);
                                                                         
