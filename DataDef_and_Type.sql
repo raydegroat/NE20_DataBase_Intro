@@ -63,8 +63,9 @@ INSERT INTO People (Name, Gender, Birthdate, Biography)
 CREATE TABLE Users (
     Id INTEGER IDENTITY(1,1) PRIMARY KEY,
     Username VARCHAR(30) NOT NULL,
-    --PASSWORD 
-
+    Password NVARCHAR(26) NOT NULL,
+    LastLoginTime DATETIME,
+    IsDeleted BIT
 );
                                                                         
 SELECT * FROM People;
