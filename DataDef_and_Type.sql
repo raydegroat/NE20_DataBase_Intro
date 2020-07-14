@@ -61,12 +61,20 @@ INSERT INTO People (Name, Gender, Birthdate, Biography)
 ;
 
 CREATE TABLE Users (
-    Id INTEGER IDENTITY(1,1) PRIMARY KEY,
+    Id INTEGER IDENTITY(1,1),
     Username VARCHAR(30) NOT NULL,
     Password NVARCHAR(26) NOT NULL,
     LastLoginTime DATETIME,
     IsDeleted BIT
+    CONSTRAINT pk_Users PRIMARY KEY (Id)
 );
+                                                                        
+ALTER TABLE Users
+DROP CONSTRAINT pk_Users;
+
+ALTER TABLE Users
+ADD CONSTRAINT PK_Users PRIMARY KEY (Id,Username)
+                                                                                   
                                                                         
 SELECT * FROM People;
                                                                         
